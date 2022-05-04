@@ -24,46 +24,25 @@
                 <p><a href="#">Isidora Millas</a> <a href="#">DNO037</a></p>
             </footer>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" integrity="sha512-rKFvwjvE4liWPlFnvH4ZhRDfNZ9FOpdkD/BU5gAIA3VS3vOQrQ5BjKgbO3kxebKhHdHcNUHLqxQYSoxee9UwgA==" crossorigin="anonymous"></script>
-
                 <script>
-                    Papa.parse("https://raw.githubusercontent.com/iximillas/Evaluacion2/main/mapa.csv", {
-                        download: true,
-                        header: true,
-                        dynamicTyping: true,
-                        complete: function (respuesta) {
-                            var datos = respuesta.data;
-                            console.log(datos);
-
                             var miMapa = L.map("mapa").setView([33.5427796,9.9672612], 2);
-
                             L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw", {
                                 maxZoom: 18,
                                 id: "mapbox/dark-v10",
                                 tileSize: 512,
                                 zoomOffset: -1,
-                            }).addTo(miMapa);
-
-                            var texto;
-                            var region;
-
-                            datos.forEach((d) => {
-                                if (d.lugar != "Miami") {
-                                    lugar = "En ";
-                                } else {
-                                    lugar = "En ";
-                                }
-
-                                if (d.lugar != "Miami") {
-                                    texto = lugar + d.lugar + ", se grabó una de las películas.";
-                                } else {
-                                    texto = lugar + d.lugar + ", se grabó una de las películas.";
-                                }
-
-                                L.marker([d.lat, d.lon]).addTo(miMapa).bindPopup(texto);
-                            });
-                        },
-                    });
+                              }).addTo(miMapa);
+                              L.marker([34.060181236803544,-118.26495006624927]).addTo(miMapa).bindPopup("<b>En Los Ángeles</b>, se grabó Rápido y Furioso y algunas escenas de Rápidos y Furiosos 9.");
+                              L.marker([26.080251882437423,-80.00075254695427]).addTo(miMapa).bindPopup("<b>Rn Miami</b>, se grabó más rápido, más furioso.");
+                              L.marker([36.281155969823274,139.69389248937378]).addTo(miMapa).bindPopup("<b>En Tokio</b>, se grabó Reto Tokio.");
+                              L.marker([24.290813589234876,-102.45680731167636]).addTo(miMapa).bindPopup("<b>En México,</b>. se grabaron algunas escenas de Rápidos y Furiosos 4.");
+                              L.marker([8.62312442151924,-80.10185915553889]).addTo(miMapa).bindPopup("<b>En Panamá,</b>. se grabaron algunas escenas de Rápidos y Furiosos 4.");
+                              L.marker([18.824744622285046,-70.01310719417397]).addTo(miMapa).bindPopup("<b>En Republica Dominicana,</b>. se grabaron algunas escenas de Rápidos y Furiosos 4.");
+                              L.marker([-22.80179267311784,-43.07949509695738]).addTo(miMapa).bindPopup("<b>En Río de Janeiro</b>, se grabó Rápidos y Furiosos: 5in Control.");
+                              L.marker([51.559304738991344, -0.00822214702727641]).addTo(miMapa).bindPopup("<b>En Londres</b>, se grabó Rápidos y Furiosos 6 y algunas escenas de Rápidos y Furisosos 9.");
+                              L.marker([24.845247545062,54.422485411165475]).addTo(miMapa).bindPopup("<b>En Abu Dhabi</b>, se grabó Rápidos y Furiosos 7.");
+                              L.marker([21.927295464633648,-79.1922310455724]).addTo(miMapa).bindPopup("<b>En Cuba</b>, se grabó la gran parte de las escenas de Rápidos y Furiosos 8.");
+                              L.marker([40.97874361362371,-73.87957390400817]).addTo(miMapa).bindPopup("<b>En Nueva York</b>, se grabaron algunas escenas de Rápidos y Furiosos 8.");     
                 </script>
-            </body>
-        </html>
+  </body>
+</html>
